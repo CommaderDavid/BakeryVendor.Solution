@@ -16,7 +16,7 @@ namespace BakeryVendorTests
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Item()
         {
-            Order newOrder = new Order("test", "test", 0, 0);
+            Order newOrder = new Order("test", "test", 0, "test");
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
 
@@ -25,7 +25,7 @@ namespace BakeryVendorTests
         {
             //Arrange
             string title = "Donuts";
-            Order newOrder = new Order(title, "test", 0, 0);
+            Order newOrder = new Order(title, "test", 0, "test");
 
             //Act
             string result = newOrder.Title;
@@ -39,7 +39,7 @@ namespace BakeryVendorTests
         {
             //Arrange
             string description = "Full order of 12 dozen";
-            Order newOrder = new Order("test", description, 0, 0);
+            Order newOrder = new Order("test", description, 0, "test");
 
             //Act
             string result = newOrder.Description;
@@ -53,7 +53,7 @@ namespace BakeryVendorTests
         {
             //Arrange
             int price = 124;
-            Order newOrder = new Order("test", "test", price, 0);
+            Order newOrder = new Order("test", "test", price, "test");
 
             //Act
             int result = newOrder.Price;
@@ -63,17 +63,46 @@ namespace BakeryVendorTests
         }
 
         [TestMethod]
-        public void GetDate_ReturnsDate_Int()
+        public void GetDate_ReturnsDate_String()
         {
             //Arrange
-            int date = 12;
+            string date = "12/4/20";
             Order newOrder = new Order("test", "test", 0, date);
 
             //Act
-            int result = newOrder.Date;
+            string result = newOrder.Date;
 
             //Assert
             Assert.AreEqual(date, result);
+        }
+
+        [TestMethod]
+        public void SetDescription_SetDescription_String()
+        {
+            //Arrange
+            string description = "Full order of Donuts.";
+            Order newOrder = new Order("test", description, 0, "test");
+
+            //Act
+            string updateDescription = "Half order of Donuts.";
+            newOrder.Description = updateDescription;
+            string result = newOrder.Description;
+
+            //Assert
+            Assert.AreEqual(updateDescription, result);
+        }
+
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_OrderList()
+        {
+            // Arrange
+            List<Order> newList = new List<Order>();
+
+            // Act
+            List<Order> result = Order.GetAll();
+
+            // Assert
+            CollectionAssert.AreEqual(newList, result);
         }
     }
 }
