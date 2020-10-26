@@ -1,6 +1,10 @@
+@{
+    Layout = "_Layout";
+}
 @using BakeryVendor.Models;
 
-<h3>Here are all the Orders from this Vendor:</h3>
+<h3>Here are all the Orders from @Model["vendor"].Name:</h3>
+<p>@Model["vendor"].Description</p>
 
 <ol>
   @foreach (Order order in @Model["orders"])
