@@ -23,12 +23,5 @@ namespace BakeryVendor.Controllers
             Vendor vendor = Vendor.Find(vendorId);
             return View(vendor);
         }
-
-        [HttpPost("/orders/delete")]
-        public ActionResult DeleteAll()
-        {
-            Order.ClearAll();
-            return View();
-        }
     }
 }

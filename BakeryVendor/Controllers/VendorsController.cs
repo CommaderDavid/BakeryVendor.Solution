@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System;
 using BakeryVendor.Models;
 
 namespace BakeryVendor.Controllers
 {
-    public class VendorsContoller : Controller
+    public class VendorsController : Controller
     {
         [HttpGet("/vendors")]
         public ActionResult Index()
@@ -34,7 +33,7 @@ namespace BakeryVendor.Controllers
             Vendor selectedVendor = Vendor.Find(id);
             List<Order> vendorOrders = selectedVendor.Orders;
             model.Add("vendor", selectedVendor);
-            model.Add("order", vendorOrders);
+            model.Add("orders", vendorOrders);
             return View(model);
         }
 
@@ -47,7 +46,7 @@ namespace BakeryVendor.Controllers
             foundVendor.AddOrder(newOrder);
             List<Order> vendorOrders = foundVendor.Orders;
             model.Add("orders", vendorOrders);
-            model.Add("vendors", foundVendor);
+            model.Add("vendor", foundVendor);
             return View("Show", model);
         }
     }
