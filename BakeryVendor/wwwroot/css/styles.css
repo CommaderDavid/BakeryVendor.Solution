@@ -2,3 +2,21 @@ body {
     background-color: bisque;
     text-align: center;
 }
+
+img {
+    width: 300px;
+}
+
+#bread1 {
+    float: left;
+    margin-left: 100px;
+}
+
+#bread2 {
+    float: right;
+    margin-right: 100px;
+}
+
+#pastry1 {
+    float: center;
+}
