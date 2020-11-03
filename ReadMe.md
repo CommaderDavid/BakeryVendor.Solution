@@ -20,15 +20,10 @@ This program allows the user to add and view Vendors to Pierre's Bakery. Then ad
       * **Input**: View first order
       * **Output**: 12 dozen orders of Donuts, $380, ordered on the 15 of october 
 ### Setup
-* Click on clone or download
-* Copy link to clipboard
-* Open your preferred terminal
-* Navigate to `$cd Desktop`
-* Create a folder to house the copy: `$mkdir "Copy"`
-* Paste the link, (this is using github): `$git clone "Link"`
+* Type in `$git clone https://github.com/CommaderDavid/BakeryVendor.Solution.git`
 * Navigate to the BakeryVendorTests folder
 * Run `dotnet restore` in the terminal
-* Navigate back to the main folder
+* Navigate to the BakeryVendor folder
 * Run `dotnet build` then `dotnet run', and enjoy.
 ### Contact
 Contact me if you have any concerns or questions at stealth259@gmail.com
